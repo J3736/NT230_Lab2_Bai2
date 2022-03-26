@@ -60,6 +60,8 @@ namespace UITServices2
         {
             timer1.Enabled = true;
             WriteToFile(DateTime.Now + ": Tắt Services1 và Services2");
+            if (sc.Status.Equals(ServiceControllerStatus.Running) ||
+                sc.Status.Equals(ServiceControllerStatus.StartPending))
             sc.Stop();
         }
         /// <summary>
