@@ -24,17 +24,17 @@ namespace UITServices1
         {
             WriteToFile("Service is started at " + DateTime.Now);
             timer.Elapsed += new ElapsedEventHandler(OnElapsedTime);
-            timer.Interval = 5000; //number in milisecinds 
+            timer.Interval = 5000; //number in milisecinds
             timer.Enabled = true;
         }
 
         protected override void OnStop()
         {
-            WriteToFile("Service is stopped at " + DateTime.Now);
+            WriteToFile(DateTime.Now + "Service is stopped.");
         }
         private void OnElapsedTime(object source, ElapsedEventArgs e)
         {
-            WriteToFile("Service is recall at " + DateTime.Now);
+            WriteToFile(DateTime.Now + "Service is recall.");
         }
         public void WriteToFile(string Message)
         {
