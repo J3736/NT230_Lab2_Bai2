@@ -39,8 +39,8 @@
             // 
             // serviceInstaller1
             // 
-            this.serviceInstaller1.Description = "UIT Service demo";
-            this.serviceInstaller1.DisplayName = "UITService.Demo";
+            this.serviceInstaller1.Description = "UIT Service1. Chạy, tắt, mỗi 5s sẽ được recall và in ra log.";
+            this.serviceInstaller1.DisplayName = "UIT Service1";
             this.serviceInstaller1.ServiceName = "Service1";
             // 
             // ProjectInstaller

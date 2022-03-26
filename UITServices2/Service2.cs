@@ -31,12 +31,12 @@ namespace UITServices2
         {
             // Thoi gian 30s 1 lan bat tat services.
             timer1.Elapsed += new ElapsedEventHandler(time_Tick);
-            timer1.Interval = 10000;
+            timer1.Interval = 30000;
             timer1.Enabled = true;
-            WriteToFile(DateTime.Now + ": Bắt đầu bật/tắt Services1 mỗi 10s.");
+            WriteToFile(DateTime.Now + ": Bắt đầu bật/tắt Services1 mỗi 30s.");
         }
         /// <summary>
-        /// Bật tắt hàm mỗi 30s
+        /// Bật tắt Service mỗi 30s
         /// </summary>
         private void time_Tick(object source, ElapsedEventArgs e)
         {
@@ -45,14 +45,17 @@ namespace UITServices2
                 sc.Status.Equals(ServiceControllerStatus.StopPending))
            {
                 sc1.Start();
-                WriteToFile(DateTime.Now + ": Services1 đang chạy, tắt Service1");
+                WriteToFile(DateTime.Now + ": Service1: đang tắt, chạy Service1");
            }
            else
             {
                 sc1.Stop();
-                WriteToFile(DateTime.Now + ": On");
+                WriteToFile(DateTime.Now + ": Service1 đang chạy, tắt Service1");
             }
         }
+        /// <summary>
+        /// Stop cả 2 services.
+        /// </summary>
         protected override void OnStop()
         {
             timer1.Enabled = true;

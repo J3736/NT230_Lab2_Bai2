@@ -39,8 +39,8 @@
             // 
             // serviceInstaller1
             //
-            this.serviceInstaller1.DisplayName = "UITServices2";
-            this.serviceInstaller1.Description = "Run stop Services1";
+            this.serviceInstaller1.DisplayName = "UIT Run/Stop Service1";
+            this.serviceInstaller1.Description = "Kiểm tra trạng thái của Service1 mỗi 30s và bật/ tắt.";
             this.serviceInstaller1.ServiceName = "Service2";
             // 
             // ProjectInstaller
